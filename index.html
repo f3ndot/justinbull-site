@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="The personal website and portfolio of Justin Bull. Web app developer specializing in Ruby on Rails." />
+    <meta name="keywords" content="HTML5,CSS3,JavaScript,jQuery,Ruby,Rails,Ruby on Rails,Justin Bull,App, Web App,Developer" />
+    <meta name="author" content="Justin Bull" />
+
+    <title>Justin Bull - Web App Developer</title>
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/application.css" />
+
+    <script type="text/javascript" src="/assets/js/modernizr.min.js"></script>
+</head>
+<body>
+
+    <div id="primary-container" class="container">
+        <div id="primary-row" class="row">
+            <div class="span4" id="side-navigation">
+                <section>
+                    <h1><a href="#profile">Justin Bull</a></h1>
+                    <h3><a href="#rails-development">Rails App Developer</a></h3>
+                    <h3><a href="#web-design">Web Designer</a></h3>
+                    <h3><a href="#cycling">Avid Cyclist</a></h3>
+
+                    <h3 style="margin-top:200px;color:#666">What can I do for you?</h3>
+                    <form>
+                        <input type="email" id="email" name="email" placeholder="Your email address" autocomplete="on" required="required"  />
+                        <textarea placeholder="Your message"  id="message" name="message" required="required"></textarea>
+                        <input id="submit" type="submit" name="submit" value="Inquire"  />
+                    </form>
+                </section>
+            </div>
+            <div class="span8" id="contextual-content">
+                <div id="slider"></div>
+                <section class="offset">
+                    <h1>My Profile</h1>
+                </section>
+                <div class="row">
+                    <div class="span3">
+                        <section class="offset">
+                            <img src="http://www.gravatar.com/avatar/d36bd9043f47f38990b0e5f622b314e2?s=218" class="img-polaroid" width="218" height="218" />
+                        </section>
+                    </div>
+                    <div class="span5">
+                        <section>
+                            <h2 class="profile-social"><a href="https://www.twitter.com/f3ndot" target="_blank">@f3ndot</a> <span>·</span> <a href="https://github.com/f3ndot" target="_blank">github</a> <span>·</span> <a href="http://justinbull.tumblr.com" target="_blank">tumblr</a></h2>
+                            <p>I build web applications using Ruby, Javascript, CSS3, and HTML5. Although I have a long, strong history with PHP, I've opted to no longer work in the language.</p>
+
+                            <p>Currently a Toronto inhabitant, I frequent <a href="http://www.hacklab.to" target="_blank">Hacklab.TO</a> and study at Ryerson University for my final year of Computer Science.</p>
+
+                            <p>My current hobbies include cycling, security culture, and cooking.</p>
+                        </section>
+                    </div>
+                </div>
+                <section class="offset" style="color:#bbb;">
+                    <br />
+                    <br />
+                    <h2 style="border:none;font-size:70px;">Watch this space</h2>
+                    <p style="font-size:16px;color:#999">I'm still building out this wonderful website so currently anything other than this boring page is unavailable.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $('form').submit(function (e) {
+                e.preventDefault()
+                var $form = $(this)
+                var $submitBtn = $('#submit')
+                $('#error-p').remove()
+
+                $submitBtn.val('Sending...').addClass('sending')
+                
+                $.post('mailer.php',{email: $('#email').val(), message: $('#message').val()}, function(data) {
+                    $submitBtn.val('Sent!').attr('disabled', true).removeClass('sending').addClass('disabled')
+                    $('form').unbind('submit')
+                }, 'json')
+                .error(function() {
+                    $submitBtn.removeClass('sending').val('Error sending').addClass('error')
+                    $form.append('<p id="error-p">Please email me directly at <a href="mailto:me@justinbull.ca">me@justinbull.ca</a></p>')
+                })
+                return false
+            })
+
+        })
+    </script>
+</body>
+</html>

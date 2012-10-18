@@ -13,5 +13,5 @@ Planned features
 - CSS transforms of page loads with JavaScript-powered relative position fallback
 - Using [History.js](https://github.com/balupton/History.js/) to push URL state of sections of the site
 - Uhm... Actually *build* a portfolio?
-- Use [jQuery Masonry](http://masonry.desandro.com/) to display my work
+- Use [jQuery Masonry](https://github.com/desandro/masonry) to display my work
 - Find something fun for the *Avid Cyclist* section

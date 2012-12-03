@@ -67,10 +67,28 @@
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.history.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.transit.min.js"></script>
 
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(function () {
+
+            if (!$.support.transition) {
+                $.fn.transition = $.fn.animate;
+            }
+
+            $('#contextual-content').transition({
+                opacity: 1,
+                y: "+=25px",
+                duration: 750
+            })
+            $('#side-navigation section').delay(375).transition({
+                opacity: 1,
+                y: "+=25px",
+                duration: 750
+            })
+
+
 
             $('form').submit(function (e) {
                 e.preventDefault()

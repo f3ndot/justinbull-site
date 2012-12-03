@@ -102,10 +102,10 @@ html.opacity.cssanimations.js #contextual-content, html.opacity.cssanimations.js
     font-size: 30px;
     line-height: 30px;
     float: right;
-transition: all 0.25s;
--moz-transition: all 0.25s; /* Firefox 4 */
--webkit-transition: all 0.25s; /* Safari and Chrome */
--o-transition: all 0.25s; /* Opera */
+    -webkit-transition: all 0.25s; /* Safari and Chrome */
+       -moz-transition: all 0.25s; /* Firefox 4 */
+         -o-transition: all 0.25s; /* Opera */
+            transition: all 0.25s;
 }
 #side-navigation input[type="submit"]:hover, #side-navigation input[type="submit"].hover, #side-navigation input[type="submit"].sending {
     background: #17a6e1 none;
@@ -133,6 +133,11 @@ transition: all 0.25s;
     height:0;
     position: absolute;
     top: 40px;
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+         -o-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+            transition: all 0.5s ease;
 }
 
 #contextual-content h1, #contextual-content h2, #contextual-content h3, #contextual-content h4, #contextual-content h5, #contextual-content h6 {

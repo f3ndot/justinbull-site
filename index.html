@@ -20,10 +20,10 @@
         <div id="primary-row" class="row">
             <div class="span4" id="side-navigation">
                 <section>
-                    <h1><a href="#profile">Justin Bull</a></h1>
-                    <h3><a href="#rails-development">Rails App Developer</a></h3>
-                    <h3><a href="#web-design">Web Designer</a></h3>
-                    <h3><a href="#cycling">Avid Cyclist</a></h3>
+                    <h1><a href="index.html">Justin Bull</a></h1>
+                    <h3><a href="rails-development.html">Rails App Developer</a></h3>
+                    <h3><a href="web-design.html">Web Designer</a></h3>
+                    <h3><a href="cycling.html">Avid Cyclist</a></h3>
 
                     <h3 style="margin-top:200px;color:#666">What can I do for you?</h3>
                     <form>
@@ -33,7 +33,7 @@
                     </form>
                 </section>
             </div>
-            <div class="span8" id="contextual-content">
+            <article class="span8" id="contextual-content">
                 <div id="slider"></div>
                 <section class="offset">
                     <h1>My Profile</h1>
@@ -61,56 +61,14 @@
                     <h2 style="border:none;font-size:70px;">Watch this space</h2>
                     <p style="font-size:16px;color:#999">I'm still building out this wonderful website so currently anything other than this boring page is unavailable.</p>
                 </section>
-            </div>
+            </article>
         </div>
     </div>
 
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.history.js"></script>
     <script type="text/javascript" src="assets/js/jquery.transit.min.js"></script>
-
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-
-            if ($('html.opacity.cssanimations').length > 0) {
-                if (!$.support.transition) {
-                    $.fn.transition = $.fn.animate;
-                }
-
-                $('#contextual-content').transition({
-                    opacity: 1,
-                    y: "+=25px",
-                    duration: 750
-                })
-                $('#side-navigation section').delay(375).transition({
-                    opacity: 1,
-                    y: "+=25px",
-                    duration: 750
-                })
-            }
-
-
-            $('form').submit(function (e) {
-                e.preventDefault()
-                var $form = $(this)
-                var $submitBtn = $('#submit')
-                $('#error-p').remove()
-
-                $submitBtn.val('Sending...').addClass('sending')
-                
-                $.post('mailer.php',{email: $('#email').val(), message: $('#message').val()}, function(data) {
-                    $submitBtn.val('Sent!').attr('disabled', true).removeClass('sending').addClass('disabled')
-                    $('form').unbind('submit')
-                }, 'json')
-                .error(function() {
-                    $submitBtn.removeClass('sending').val('Error sending').addClass('error')
-                    $form.append('<p id="error-p">Please email me directly at <a href="mailto:me@justinbull.ca">me@justinbull.ca</a></p>')
-                })
-                return false
-            })
-
-        })
-    </script>
+    <script type="text/javascript" src="assets/js/application.js"></script>
 </body>
 </html>

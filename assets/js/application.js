@@ -70,7 +70,7 @@
                         animatePage();
                     },
                     error: function(jqXHR, textStatus, errorThrown){
-                        document.location.href = url;
+                        document.location.href = State.url;
                         return false;
                     }
                 });

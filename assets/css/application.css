@@ -11,7 +11,8 @@ a:link, a:visited { color: #17a6e1; }
 a:hover { color: #138abb; }
 a:active { color: #000; }
 
-#contextual-content, #side-navigation section {
+
+html.opacity.cssanimations #contextual-content, html.opacity.cssanimations #side-navigation section {
     position: relative;
     top: -25px;
     opacity: 0.5;

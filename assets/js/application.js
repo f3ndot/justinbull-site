@@ -1,59 +1,97 @@
 (function(window,undefined){
 
-    // Prepare
     var History = window.History; // Note: We are using a capital H instead of a lower h
-    if ( !History.enabled ) {
-        // History.js is disabled for this browser.
-        // This is because we can optionally choose to support HTML4 browsers or not.
-        return false;
-    }
 
-    // Bind to StateChange Event
-    History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
-        var State = History.getState(); // Note: We are using History.getState() instead of event.state
-        document.getElementById('contextual-content').innerHTML = State.data;
-        History.log(State.data, State.title, State.url);
-    });
-
-    // Wait for Document
     $(function () {
 
-        if ( History.enabled ) {
-            $('#side-navigation a').click(function (e) {
-                e.preventDefault();
-                
-                var url = $(this).attr('href');
-                if(location.pathname.substr(location.pathname.lastIndexOf('/')+1) == url) {
-                    return false;
-                }
+        function animatePage(options) {
+            defaultOptions = {
+                loading: false,
+                navigation: false
+            }
+            if (typeof options == 'object') {
+                options = $.extend(defaultOptions, options);
+            } else {
+                options = defaultOptions;
+            }
 
-                $.ajax({
-                    url: url,
-                    dataType: 'html',
-                    success: function (data) {
-                        var pageContentHTML = $(data).filter('#primary-container').find('#contextual-content').html()
-                        $('#contextual-content').html(pageContentHTML)
-                        History.pushState(pageContentHTML, $(data).filter('title').text(), url);
-                    }
-                });
-                return false;
-            })
-        }
-
-        if ($('html.opacity.cssanimations').length > 0) {
+            if (!canAnimate) { return false; }
             if (!$.support.transition) {
                 $.fn.transition = $.fn.animate;
             }
 
-            $('#contextual-content').transition({
-                opacity: 1,
-                y: "+=25px"
-            }, 1500, 'snap');
-            $('#side-navigation section').delay(200).transition({
-                opacity: 1,
-                y: "+=25px"
-            }, 1500, 'snap');
+            if(options.loading == true) {
+                $content.transition({
+                    opacity: 0.5,
+                    y: "-=25px"
+                }, 1500, 'snap');
+                if(options.navigation == true) {
+                    $sidenav.delay(200).transition({
+                        opacity: 0.5,
+                        y: "-=25px"
+                    }, 1500, 'snap');
+                }
+            } else {
+                $content.transition({
+                    opacity: 1,
+                    y: "+=25px"
+                }, 1500, 'snap');
+                if(options.navigation == true) {
+                    $sidenav.delay(200).transition({
+                        opacity: 1,
+                        y: "+=25px"
+                    }, 1500, 'snap');
+                }
+            }
         }
+
+        var $content = $('#contextual-content');
+        var $sidenav = $('#side-navigation section');
+        var canAnimate = $('html.opacity.cssanimations').length > 0;
+
+        if ( History.enabled ) {
+            // Bind to StateChange Event
+            History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
+                var State = History.getState(); // Note: We are using History.getState() instead of event.state
+                // History.log(State.data, State.title, State.url);
+                animatePage({loading: true });
+
+                $.ajax({
+                    url: State.url,
+                    dataType: 'html',
+                    success: function (data) {
+                        var pageContentHTML = $(data).filter('#primary-container').find('#contextual-content').html()
+                        document.title = $(data).filter('title').text();
+
+                        $content.stop(true,true);
+                        $sidenav.stop(true,true);
+                        $content.html(pageContentHTML);
+
+                        animatePage();
+                    },
+                    error: function(jqXHR, textStatus, errorThrown){
+                        document.location.href = url;
+                        return false;
+                    }
+                });
+            });
+            $('#side-navigation a').click(function (e) {
+                // Continue as normal for cmd clicks etc
+                if ( e.which == 2 || e.metaKey ) { return true; }
+                e.preventDefault();
+                
+                var $link = $(this);
+                var url = $link.attr('href');
+                if(location.pathname.substr(location.pathname.lastIndexOf('/')+1) == url) {
+                    return false;
+                }
+
+                History.pushState(null, $link.attr('title')||null, url);
+                return false;
+            })
+        }
+
+        animatePage({navigation: true});
 
 
         $('form').submit(function (e) {

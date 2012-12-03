@@ -12,7 +12,7 @@ a:hover { color: #138abb; }
 a:active { color: #000; }
 
 
-html.opacity.cssanimations #contextual-content, html.opacity.cssanimations #side-navigation section {
+html.opacity.cssanimations.js #contextual-content, html.opacity.cssanimations.js #side-navigation section {
     position: relative;
     top: -25px;
     opacity: 0.5;

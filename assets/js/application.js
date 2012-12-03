@@ -11,6 +11,7 @@
     // Bind to StateChange Event
     History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
         var State = History.getState(); // Note: We are using History.getState() instead of event.state
+        document.getElementById('contextual-content').innerHTML = State.data;
         History.log(State.data, State.title, State.url);
     });
 
@@ -32,7 +33,7 @@
                     success: function (data) {
                         var pageContentHTML = $(data).filter('#primary-container').find('#contextual-content').html()
                         $('#contextual-content').html(pageContentHTML)
-                        History.pushState(null, $(data).filter('title').text(), url);
+                        History.pushState(pageContentHTML, $(data).filter('title').text(), url);
                     }
                 });
                 return false;

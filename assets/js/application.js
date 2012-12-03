@@ -19,8 +19,12 @@
 
         if ( History.enabled ) {
             $('#side-navigation a').click(function (e) {
-                var url = $(this).attr('href');
                 e.preventDefault();
+                
+                var url = $(this).attr('href');
+                if(location.pathname.substr(location.pathname.lastIndexOf('/')+1) == url) {
+                    return false;
+                }
 
                 $.ajax({
                     url: url,
@@ -31,6 +35,7 @@
                         History.pushState(null, $(data).filter('title').text(), url);
                     }
                 });
+                return false;
             })
         }
 

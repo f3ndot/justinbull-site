@@ -54,7 +54,7 @@ html.opacity.cssanimations.js #contextual-content, html.opacity.cssanimations.js
 
 #side-navigation {
     height: 100%;
-    background: #eee none;    
+    background: #eee none;
     font-family: acidregular, 'Helvetica Neue', Arial, sans-serif;
 }
 #side-navigation h1 a, #side-navigation h1, #contextual-content h1 a, #contextual-content h1 {
@@ -176,6 +176,63 @@ html.opacity.cssanimations.js #contextual-content, html.opacity.cssanimations.js
     color: #666;
 }
 
+.work-zone .work-item {
+    position: relative;
+    cursor: pointer;
+    width: 113px;
+    min-height: 100px;
+    margin-bottom: 17px;
+    background: #ccc;
+    padding: 10px;
+    overflow: hidden;
+}
+.work-zone .work-item.large {
+    width: 266px;
+}
+.work-zone .work-item.x-large {
+    width: 416px;
+}
+.work-zone .work-item.featured {
+    width: 572px;
+    min-height: 300px;
+    z-index: 1;
+}
+.work-zone .work-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 740px;
+    max-width: 740px !important;
+    height: auto;
+}
+
+/**** Transitions ****/
+
+.masonry,
+.masonry .masonry-brick {
+  -webkit-transition-duration: 0.7s;
+     -moz-transition-duration: 0.7s;
+      -ms-transition-duration: 0.7s;
+       -o-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+.masonry {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.masonry .masonry-brick {
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+      -ms-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
+}
+
 @media (max-width: 979px) and (min-width: 768px) {
     #side-navigation h1 a {
         position: relative;
@@ -196,6 +253,9 @@ html.opacity.cssanimations.js #contextual-content, html.opacity.cssanimations.js
     }
     #contextual-content h1 {
         padding-bottom: 24px;
+    }
+    .work-zone .work-item.featured {
+        width: 424px;
     }
 }
 @media (min-width:1200px) {
@@ -219,4 +279,8 @@ html.opacity.cssanimations.js #contextual-content, html.opacity.cssanimations.js
     #contextual-content h1 {
         padding-bottom: 40px;
     }
+    .work-zone .work-item.featured {
+        width: 720px;
+    }
+
 }

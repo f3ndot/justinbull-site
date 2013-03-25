@@ -4,6 +4,23 @@
 
     $(function () {
 
+        $('.work-zone .work-item').on('click', function () {
+            $this = $(this)
+            if($this.hasClass('featured')) {
+                $this.removeClass('featured');
+            } else {
+                $this.addClass('featured');
+            }
+            $('.work-zone').masonry('reload');
+        });
+
+        $('.work-zone').masonry({
+          itemSelector: '.work-item',
+          isAnimated: !Modernizr.csstransitions,
+          gutterWidth: 17,
+          columnWidth: 133
+        });
+
         function animatePage(options) {
             defaultOptions = {
                 loading: false,
@@ -79,7 +96,7 @@
                 // Continue as normal for cmd clicks etc
                 if ( e.which == 2 || e.metaKey ) { return true; }
                 e.preventDefault();
-                
+
                 var $link = $(this);
                 var url = $link.attr('href');
                 if(location.pathname.substr(location.pathname.lastIndexOf('/')+1) == url) {
@@ -101,7 +118,7 @@
             $('#error-p').remove();
 
             $submitBtn.val('Sending...').addClass('sending');
-            
+
             $.post('mailer.php',{email: $('#email').val(), message: $('#message').val()}, function(data) {
                 $submitBtn.val('Sent!').attr('disabled', true).removeClass('sending').addClass('disabled');
                 $('form').unbind('submit');

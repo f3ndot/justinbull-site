@@ -91,6 +91,12 @@
                         $content.html(pageContentHTML);
 
                         animatePage();
+                        $('.work-zone').masonry({
+                          itemSelector: '.work-item',
+                          isAnimated: !Modernizr.csstransitions,
+                          gutterWidth: 17,
+                          columnWidth: 133
+                        });
                     },
                     error: function(jqXHR, textStatus, errorThrown){
                         document.location.href = State.url;

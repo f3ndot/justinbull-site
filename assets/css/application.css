@@ -196,7 +196,7 @@ html.opacity.cssanimations.js #contextual-content, html.opacity.cssanimations.js
 }
 .work-zone .work-item.featured {
     width: 572px;
-    min-height: 300px;
+    height: 300px;
     z-index: 1;
 }
 .work-zone .work-item .short-title,

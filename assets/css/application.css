@@ -212,10 +212,6 @@ html.opacity.cssanimations.js #contextual-content, html.opacity.cssanimations.js
     text-align: right;
     font-size: 20px;
 }
-.work-zone .work-item .featured-title [class^="icon-"],
-.work-zone .work-item .featured-title [class*=" icon-"] {
-    vertical-align: middle;
-}
 .work-zone .work-item .featured-title h3 {
     margin: 10px 0;
     font-size: 50px;

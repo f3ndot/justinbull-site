@@ -178,13 +178,15 @@ html.opacity.cssanimations.js #contextual-content, html.opacity.cssanimations.js
 
 .work-zone .work-item {
     position: relative;
-    cursor: pointer;
     width: 113px;
     min-height: 125px;
     margin-bottom: 17px;
     background: #ccc;
     padding: 10px;
     overflow: hidden;
+}
+.work-zone .work-item.clickable {
+    cursor: pointer;
 }
 .work-zone .work-item.large {
     width: 266px;
@@ -228,9 +230,23 @@ html.opacity.cssanimations.js #contextual-content, html.opacity.cssanimations.js
 }
 .work-zone .work-item .short-title {
     display: inline-block;
+    font-size: 24.5px;
 }
 .work-zone .work-item.featured .featured-title {
     display: inline-block;
+}
+
+.work-zone .work-item.text-link {
+    text-align: center;
+}
+.work-zone .work-item.text-link a {
+    display: block;
+}
+.work-zone .work-item.text-link a:hover {
+    text-decoration: none;
+}
+.work-zone .work-item.text-link a i {
+    font-size:90px;
 }
 .work-zone .work-item img {
     position: absolute;

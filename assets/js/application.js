@@ -4,12 +4,18 @@
 
     $(function () {
 
-        $('.work-zone .work-item img').on('click', function () {
+        $('.work-zone .work-item.clickable img').on('click', function () {
             $workItem = $(this).parent()
             if($workItem.hasClass('featured')) {
                 $workItem.removeClass('featured');
+                if($workItem.data('featured-size') != undefined) {
+                    $workItem.css('height', 'auto');
+                }
             } else {
                 $workItem.addClass('featured');
+                if($workItem.data('featured-size') != undefined) {
+                    $workItem.css('height', $workItem.data('featured-size'));
+                }
             }
             $('.work-zone').masonry('reload');
         });

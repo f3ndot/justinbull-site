@@ -4,12 +4,12 @@
 
     $(function () {
 
-        $('.work-zone .work-item').on('click', function () {
-            $this = $(this)
-            if($this.hasClass('featured')) {
-                $this.removeClass('featured');
+        $('.work-zone .work-item img').on('click', function () {
+            $workItem = $(this).parent()
+            if($workItem.hasClass('featured')) {
+                $workItem.removeClass('featured');
             } else {
-                $this.addClass('featured');
+                $workItem.addClass('featured');
             }
             $('.work-zone').masonry('reload');
         });

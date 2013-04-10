@@ -188,6 +188,33 @@ html.opacity.cssanimations.js #contextual-content, html.opacity.cssanimations.js
 .work-zone .work-item.clickable {
     cursor: pointer;
 }
+.work-zone .work-item.external a {
+    display: inline-block;
+}
+.work-zone .work-item.external a:hover {
+    text-decoration: none;
+}
+.work-zone .work-item.external a .popup,
+.work-zone .work-item.clickable .popup {
+    display: none;
+}
+.work-zone .work-item.clickable:hover .popup,
+.work-zone .work-item.external a:hover .popup {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 20px;
+    color: rgb(23, 166, 225);
+    background-color: rgba(255,255,255,0.7);
+    padding: 3px 7px;
+}
+.work-zone .work-item.clickable:hover .popup {
+    color: #333;
+}
+.work-zone .work-item.clickable.featured:hover .popup {
+    display: none;
+}
 .work-zone .work-item.large {
     width: 266px;
 }

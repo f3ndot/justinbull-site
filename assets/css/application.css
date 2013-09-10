@@ -42,3 +42,15 @@ a.social-btn:hover,a.social-btn:active,a.social-btn:focus {
   text-decoration: none;
   opacity: .8;
 }
+
+@media (max-width: 767px) {
+  .col-xs-2 {
+    width: 25% !important;
+  }
+  .header {
+    padding: 30px 0;
+  }
+  .header h1 {
+    font-size: 52px;
+  }
+}

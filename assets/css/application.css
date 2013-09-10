@@ -54,3 +54,12 @@ a.social-btn:hover,a.social-btn:active,a.social-btn:focus {
     font-size: 52px;
   }
 }
+
+.error-icon {
+  font-size: 300px;
+}
+@media (max-width: 767px) {
+  .error-icon {
+    font-size: 200px;
+  }
+}

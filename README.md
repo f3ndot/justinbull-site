@@ -9,9 +9,6 @@ Nothing special yet! Just static HTML with some fancy JS / jQuery
 
 All open-source code is now managed by [Bower](http://twitter.github.com/bower/)!
 
-
-Planned features
-----------------
-- Uhm... Actually *build* a portfolio?
-- Use [jQuery Masonry](https://github.com/desandro/masonry) to display my work
-- Find something fun for the *Avid Cyclist* section
+Set Up Instructions
+-------------------
+You'll need bower installed. `git clone` the source code to your directory and run `make install` to download all of the components for development.

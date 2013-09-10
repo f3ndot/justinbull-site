@@ -1,0 +1,44 @@
+.header {
+  padding: 48px 0;
+  background-color: #ecf0f1;
+  text-align: center;
+}
+
+.header h1 {
+  font-family: 'Quattrocento', serif;
+  font-size: 64px;
+
+}
+
+.bio-blurb {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.social-btns {
+  margin-top: 20px;
+}
+.social-btns .col-md-3 {
+  text-align: center;
+}
+.social-btn {
+  display: block;
+  margin: auto;
+  color: #fff;
+  border-radius: 1000px;
+  width: 75px;
+  height: 75px;
+  font-size: 40px;
+  padding-top: 8px;
+  text-align: center;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+a.social-btn:hover,a.social-btn:active,a.social-btn:focus {
+  color: #fff;
+  text-decoration: none;
+  opacity: .8;
+}

@@ -54,7 +54,7 @@
       <div class="col-md-4 col-md-offset-2">
         <h2>Current Status</h2>
         <ul>
-          <li><strong>Alive and well</strong> <a id="dead" data-toggle="popover" title="An Online Tombstone" data-content="<p>This status will change in the event that I die.</p><p>The site will remain up as some form of an online tombstone; a record of my existence.</p><p>This status is powered by some form of a <a href=&quot;http://en.wikipedia.org/wiki/Dead_man's_switch&quot;>dead man's switch</a></p>" href="#"><i class="icon-question-sign"></i></a></li>
+          <li><strong>Alive and well</strong> <a id="dead" data-toggle="popover" title="An Online Tombstone" data-content="<p>This status will change in the event that I die.</p><p>The site will remain up as some form of an online tombstone; a record of my existence.</p><p>This status is powered by some form of a <a href=&quot;http://en.wikipedia.org/wiki/Dead_man's_switch&quot;>dead man's switch</a></p>" href="#" class="btn btn-default btn-xs"><i class="icon-question-sign"></i> Explain</a> <a data-toggle="modal" href="#myModal" class="btn btn-default btn-xs"><i class="icon-ok"></i> Verify</a></li>
           <li>Employed full-time at <a href="http://www.freshbooks.com">FreshBooks</a></li>
           <li>Living in Toronto, Canada</li>
           <li>Completing Computer Science undergrad &amp; thesis at Ryerson University</li>
@@ -85,7 +85,54 @@
         <p class="text-muted"><small>Please note the résumé is mildly out of date</small></p>
       </div>
     </div>
+    <div class="row" style="margin-top:20px">
+      <div class="col-md-12 text-center">
+        <p class="text-muted">PGP Key ID: <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x1A2BDEAA68FDB34C&amp;op=vindex&amp;fingerprint=on&amp;exact=on">0x1A2BDEAA68FDB34C</a></p>
+      </div>
+    </div>
   </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Verify Life Status</h4>
+        </div>
+        <div class="modal-body">
+          <pre>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+This is Justin Alexander Scott Bull verifying that I am alive and well, not dead or incapacitated.
+
+In the event that I die, this message will change and explain the details of my death.
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIcBAEBCgAGBQJSL2yFAAoJEESFZfv8+htYN94P/0eKCX9lTVbcG1qbfkichiRG
+GIOC6RSbkUO9n4cObNdpthiPQyLf/i26QzHNrTW/0sRWPCzdnET55LBpiBUkjjMz
+voNGNQRbO08k2nrb6GxvGVNT3AIA9lWqFALlUdx5kvWp53V3OYL+BXU0vdUXFZkR
+dTf0Yj+bIenCqNwlBCHTexQPjv5ltcpXoAmPEOkJU6WrbLqGSxlWBouvwRCoa9vD
+1V1pppX1GhKJnPNXSL/J8ubJoIAZSCkXaJvswCBJipw+ArfSyM80MTa1lgw5Q7zj
+L6+ExWP+yUlWwJE4FIjUYDpCXOIWQ9R7AnwXxVRtCp4U0oLUjJ5p62TFhlpLshfB
+d8giNEOAS1J3r3pLvzpfzJZqtRfmZgifFsHAt8eOjSQ4k+QiqwsAkXglPHDWLol/
+ZomKxHXdK6+ujUP2P/XJ+JiXrpak1TWi2h91N0MlXHsMLIFOGhgseHYjbqDUj0LI
+b6I8+y18sknW2liELfx7bsSkaCfTeIpRJG49UuYs2eEBZUS5MMLrkjk0p3VDMA3U
+5f6rSyFbCAozMWySe7tAEqgYYhpHDjgdREZi3+3KuhfhVfu90TCMatJEiIMZJH2E
+56smM9tayRS0oKoeCt0int5KxZRdQNSRz1rsQP6SdFLUDRxohMkLNiGb5Cznyczj
+9JvhS6j+mLnpUq3fFC2q
+=SFz9
+-----END PGP SIGNATURE-----</pre>
+          <p>Above is a PGP-signed message stating my life status. If you're familiar with PGP, you can verify the authenticity of my status.</p>
+
+          <p>If you don't know how to verify this message, attempt to contact a friend who may know how to or a member of <a href="https://hacklab.to/contact/">HackLab.to</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
   <script type="text/javascript" src="assets/js/jquery.min.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>

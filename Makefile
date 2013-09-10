@@ -21,7 +21,7 @@ help:
 install: bower_install
 
 bower_install:
-	bower install justinbull-site
+	bower install
 
 compile:
 	@echo "TODO!"

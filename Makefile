@@ -1,10 +1,7 @@
 .PHONY: all
-.PHONY: help
-.PHONY: install
-.PHONY: bower_install
-
 all: help
 
+.PHONY: help
 help:
 	@echo ""
 	@echo "justinbull-site Makefile"
@@ -18,10 +15,21 @@ help:
 	@echo "compile  Compile site and bower components for deployment to production"
 	@echo ""
 
-install: bower_install
+.PHONY: install
+install: bootstrap_install bower_install
 
-bower_install:
+.PHONY: bootstrap_install
+bootstrap_install:
+	npm install -g grunt-cli
+	cd bower_components/bootstrap/
+	npm install
+	grunt
+	cd ../../
+
+.PHONY: bower_install
+bower_install: 
 	bower install
 
+.PHONY: compile
 compile:
 	@echo "TODO!"

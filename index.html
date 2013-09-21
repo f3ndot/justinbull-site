@@ -54,7 +54,7 @@
       <div class="col-md-4 col-md-offset-2">
         <h2>Current Status</h2>
         <ul>
-          <li><strong>Alive and well</strong> <a id="dead" data-toggle="popover" title="An Online Tombstone" data-content="<p>This status will change in the event that I die.</p><p>The site will remain up as some form of an online tombstone; a record of my existence.</p><p>This status is powered by some form of a <a href=&quot;http://en.wikipedia.org/wiki/Dead_man's_switch&quot;>dead man's switch</a></p>" href="#" class="btn btn-default btn-xs"><i class="icon-question-sign"></i> Explain</a> <a data-toggle="modal" href="#myModal" class="btn btn-default btn-xs"><i class="icon-ok"></i> Verify</a></li>
+          <li><strong>Alive and well</strong> <a id="dead" data-toggle="popover" title="An Online Tombstone" data-content="<p>This status will change in the event that I die.</p><p>The site will remain up as some form of an online tombstone; a record of my existence.</p><p>This status is powered by some form of a <a href=&quot;http://en.wikipedia.org/wiki/Dead_man's_switch&quot;>dead man's switch</a></p>" class="btn btn-default btn-xs"><i class="icon-question-sign"></i> Explain</a> <a data-toggle="modal" href="#verify" class="btn btn-default btn-xs"><i class="icon-ok"></i> Verify</a></li>
           <li>Employed full-time at <a href="http://www.freshbooks.com">FreshBooks</a></li>
           <li>Living in Toronto, Canada</li>
           <li>Completing Computer Science undergrad &amp; thesis at Ryerson University</li>
@@ -88,11 +88,12 @@
     <div class="row" style="margin-top:20px">
       <div class="col-md-12 text-center">
         <p class="text-muted">PGP Key ID: <a href="http://pgp.mit.edu:11371/pks/lookup?search=0x1A2BDEAA68FDB34C&amp;op=vindex&amp;fingerprint=on&amp;exact=on">0x1A2BDEAA68FDB34C</a></p>
+        <p class="text-muted"><small>Jabber: <a href="xmpp:f3ndot@jabber.ccc.de" alt="Seldom used, try email first" title="Seldom used, try email first" rel="tooltip">f3ndot@jabber.ccc.de</a> <a data-toggle="modal" href="#fingerprint" class="btn btn-default btn-xs"><i class="icon-barcode"></i> Fingerprint</a></small></p>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="verify" tabindex="-1" role="dialog" aria-labelledby="verifyLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -126,6 +127,46 @@ b6I8+y18sknW2liELfx7bsSkaCfTeIpRJG49UuYs2eEBZUS5MMLrkjk0p3VDMA3U
           <p>Above is a PGP-signed message stating my life status. If you're familiar with PGP, you can verify the authenticity of my status.</p>
 
           <p>If you don't know how to verify this message, attempt to contact a friend who may know how to or a member of <a href="https://hacklab.to/contact/">HackLab.to</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div class="modal fade" id="fingerprint" tabindex="-1" role="dialog" aria-labelledby="fingerprintLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Jabber / XMPP OTR Fingerprint</h4>
+        </div>
+        <div class="modal-body">
+          <pre>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+My OTR fingerprint for f3ndot@jabber.ccc.de is:
+
+55B98D3A 74A2D8C0 1561AC44 16B95015 41365A28
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG/MacGPG2 v2.0.19 (Darwin)
+
+iQIcBAEBCgAGBQJSPdWCAAoJEESFZfv8+htYM9IP/1RAbL0q/NyqM5rWOGTGYytT
+HPHBrFBvypphrJS8X2pRfVrwKQX2elf8HWAbHva13eMp/kxhCquz0XHE6nZFfFli
+f5DlY61HbLby6D1tZGyZncKP8Q8psDoL+Z6nHreA3fcv+iVtSM/8ZKFDPAuOx4Nu
+WK93xWQ1YgUzPvu/tFmiSh7J4XXTFID9oi57jEF1HWyFxTPS/JnxP4ufPOntHUrc
+mnJUq3zAnFbqHzlKpJuo5etKdODFsKKNl69vt0ApDEZPMJo9DyyjNGRmeJNYCcWf
+3kltdbMU5BRnIl1KUrwRT6zzEL5VoeElcAcy1LzWEO2Bc/+asEIUmal2NsYXLgHW
+DW3wAZOplrBMTevJlCXsPAkgfS8Srj/y5pKcbkjrtqpyVKfUC1kWrggqCxTPAYn4
+U6Drbh4BMHz9wObtSw8QYGt9NgAhCM3WfVe+F+iBthFw0pgtCU3m+Nd6LEkVmiOQ
+tsY+gLrafUNLCCxXkcweJe8lPvjQ62RztTnpuBxxSQ1K/H//wqPCUrz831HYkE2F
+gPwbW3lcCV6iY+tC7Feg23AuE7zUlDEPtal4aBpU2M87tYNlVsO6OIHn11ZwZ9QN
+MJaIFW+K/leJuYR7BmhOXCDKpMMmjk0/U/Q652FYlIclTjMXWVGB91UYRlZiyyvI
+o99GDsWF68NvhkXMr1l0
+=mDOQ
+-----END PGP SIGNATURE-----</pre>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>

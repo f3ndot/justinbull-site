@@ -4,6 +4,11 @@
   text-align: center;
 }
 
+.headshot {
+  width: 256px;
+  margin: auto;
+}
+
 .header h1 {
   font-family: 'Quattrocento', serif;
   font-size: 64px;
@@ -52,6 +57,9 @@ a.social-btn:hover,a.social-btn:active,a.social-btn:focus {
   }
   .header h1 {
     font-size: 52px;
+  }
+  .headshot {
+    width: 208px;
   }
 }
 

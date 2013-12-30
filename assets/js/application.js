@@ -20,4 +20,23 @@
     }
   });
 
+  var $statusText = $('#life-status');
+  var $signedStatusText = $('#signed-life-status');
+
+  $.getJSON('/life-status.php', function (data) {
+    if(typeof data.status != 'undefined') {
+      $statusText.text(data.status);
+      $statusText.css('color', data.color);
+      if (data.bold == true) {
+        $statusText.css('font-weight', 'bold');
+      }
+      $signedStatusText.text(data.verify);
+    } else {
+      $statusText.text('Error fetching life status');
+      $statusText.css('color', 'red');
+      $statusText.css('font-weight', 'bold');
+      $signedStatusText.text("There was an error contacting the life status server.\n\nIt may be offline or temporarily unavailable.");
+    }
+  });
+
 })(window);

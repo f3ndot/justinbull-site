@@ -26,7 +26,9 @@
   $.getJSON('/life-status.php', function (data) {
     if(typeof data.status != 'undefined') {
       $statusText.text(data.status);
-      $statusText.css('color', data.color);
+      if (typeof data.color != 'undefined') {
+        $statusText.css('color', data.color);
+      }
       if (data.bold == true) {
         $statusText.css('font-weight', 'bold');
       }

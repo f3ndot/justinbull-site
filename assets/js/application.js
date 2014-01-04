@@ -25,7 +25,11 @@
 
   $.getJSON('/life-status.php', function (data) {
     if(typeof data.status != 'undefined') {
-      $statusText.text(data.status);
+      if (data.cached == true) {
+        $statusText.text(data.status + ' (Cached)');
+      } else {
+        $statusText.text(data.status);
+      }
       if (typeof data.color != 'undefined') {
         $statusText.css('color', data.color);
       }

@@ -8,15 +8,13 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
 curl_setopt($ch, CURLOPT_CAINFO, dirname(__FILE__) . '/cacert.pem');
 
-$statusJson = json_decode(curl_exec($ch));
+$webpageContent = curl_exec($ch);
+file_put_contents('life-status-cached.txt', $webpageContent);
+$statusJson = json_decode($webpageContent);
 
-if (curl_errno($ch)) {
-  $statusJson = array(
-    'status' => 'Error fetching life status',
-    'color' => 'red',
-    'bold' => true,
-    'verify' => "There was an error contacting the life status server.\n\nIt may be offline or temporarily unavailable."
-  );
+if (curl_errno($ch) || $statusJson == null) {
+  $statusJson = json_decode(file_get_contents('life-status-cached.txt'));
+  $statusJson['cached'] = true;
 }
 
 curl_close($ch);

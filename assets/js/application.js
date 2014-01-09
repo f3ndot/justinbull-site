@@ -1,5 +1,9 @@
 (function(window,undefined){
 
+  if (window.location.hash == '#verify') {
+    $('#verify').modal()
+  }
+
   $('[rel=tooltip]').tooltip();
   $('#dead').popover({
     html: true,

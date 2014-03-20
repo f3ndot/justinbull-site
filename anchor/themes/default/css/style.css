@@ -220,7 +220,7 @@ article h6 {
 	font-size: 14px;
 	font-style: italic;
 	
-	white-space: nowrap;
+	/*white-space: nowrap;*/
 }
 	.footnote {
 		padding: 20px 0 40px;

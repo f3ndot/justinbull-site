@@ -56,7 +56,7 @@ function relative_time($date) {
 }
 
 function twitter_account() {
-	return site_meta('twitter', 'idiot');
+	return site_meta('twitter', 'f3ndot');
 }
 
 function twitter_url() {

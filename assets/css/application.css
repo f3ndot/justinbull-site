@@ -51,6 +51,13 @@ a.social-btn:hover,a.social-btn:active,a.social-btn:focus {
   opacity: .8;
 }
 
+.attribution {
+  padding: 20px 20px 10px 20px;
+  margin: 0 0 20px;
+  background-color: #faf8f0;
+  border-left: 3px solid #faebcc;
+}
+
 @media (max-width: 767px) {
   .col-xs-2 {
     width: 25% !important;

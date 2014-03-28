@@ -1,8 +1,9 @@
 		<div class="wrap">
 	            <footer id="bottom">
 	                <small>
-	                  <a rel="license" href="//creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />
-	                  &copy; <?php echo date('Y'); ?> <a href="/attribution/">Justin A. S. Bull</a>. <a rel="license" href="//creativecommons.org/licenses/by/4.0/">Some rights reserved</a>.
+	                  <a rel="license" href="//creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />
+	                  &copy; <?php echo date('Y'); ?> Justin A. S. Bull. <a rel="license" href="//creativecommons.org/licenses/by/4.0/">Some rights reserved</a>.<br />
+	                  <a href="/attribution">How to provide attribution</a>.
 	                </small>
 
 	                <ul role="navigation">

@@ -13,9 +13,9 @@ $statusJson = json_decode($webpageContent);
 
 if (curl_errno($ch) || $statusJson == null) {
   $statusJson = json_decode(file_get_contents('life-status-cached.txt'));
-  $statusJson['cached'] = true;
+  $statusJson->cached = true;
 } else {
-  file_put_contents('life-status-cached.txt', $webpageContent); 
+  file_put_contents('life-status-cached.txt', $webpageContent);
 }
 
 curl_close($ch);

@@ -18,5 +18,6 @@
 
 	        </div>
         </div>
+  			<script type="text/javascript" src="/assets/js/tracking.js"></script>
     </body>
 </html>

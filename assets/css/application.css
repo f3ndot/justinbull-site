@@ -17,11 +17,11 @@
   bottom: 0;
   right: 0;
   font-size: 12px;
-  font-weight: bold;
-  margin: 3px;
+  margin: 4px 8px;
 }
 .background-credit a {
   color: rgba(0,0,0,0.4);
+  font-weight: bold;
 }
 
 .headshot {
